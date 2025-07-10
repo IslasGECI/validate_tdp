@@ -10,19 +10,24 @@ Config/testthat/edition: 3
 Description: Tests to validate tabular datapackage
 Encoding: UTF-8
 Imports:
-	data.table,
-	dplyr,
+    dplyr,
     glue,
-	lubridate,
+    lubridate,
     readr,
     stringr,
+    tibble,
 LazyData: true
 License: AGPL-3.0-or-later
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
 Suggests:
+    covr,
+    data.table,
     devtools,
     roxygen2,
-    testthat
+    testthat,
+    testtools,
+Remotes:
+    IslasGECI/testtools
 Type: Package
-Version: 0.1.0
+Version: 0.2.0

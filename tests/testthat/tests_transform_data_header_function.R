@@ -1,7 +1,3 @@
-library(testthat)
-library(tidyverse)
-
-
 file_tests <- "/workdir/tests/data/IG_POSICION_TRAMPAS_30AGO2020.csv"
 data_tests <- data.table::fread(file_tests, drop = c(1:4))
 
@@ -48,7 +44,7 @@ test_that("Prueba cambio de formato en fecha", {
 test_that("Concatena columnas con y sin fecha", {
   setwd("/workdir")
   filename <- "tests/data/wrong_dates.csv"
-  table_with_wrong_column_names <- read_csv(filename, show_col_types = FALSE)
+  table_with_wrong_column_names <- readr::read_csv(filename, show_col_types = FALSE)
   table_with_corret_column_names <- fix_date_format_in_column_names(table_with_wrong_column_names)
   obtained_columnames <- colnames(table_with_corret_column_names)
   expected_columnames <- c("ID", "# Trampa", "Zona", "Responsable", "01/May/2022", "02/May/2022", "03/May/2022", "04/May/2022", "05/May/2022", "06/May/2022", "07/May/2022")

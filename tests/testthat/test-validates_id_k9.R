@@ -1,5 +1,3 @@
-library(tidyverse)
-
 describe("Check column ID_punt", {
   it("split column ID_punto", {
     id_punto <- "K9-MA-005-MD"
