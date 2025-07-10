@@ -49,9 +49,9 @@ setup: clean install
 
 install:
 	R -e "devtools::document()" && \
-    R CMD build . && \
-    R CMD check validate.tdp_0.1.0.tar.gz && \
-    R CMD INSTALL validate.tdp_0.1.0.tar.gz
+	R -e "devtools::check(error_on = 'error')" && \
+	R -e "devtools::build()" && \
+	R -e "devtools::install()"
 
 tests:
 	Rscript -e "devtools::test(stop_on_failure = TRUE)"
